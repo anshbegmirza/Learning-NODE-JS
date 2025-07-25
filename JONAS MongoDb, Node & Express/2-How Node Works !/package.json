@@ -4,7 +4,7 @@
   "description": "",
   "main": "event.js",
   "scripts": {
-    "start": "nodemon event.js"
+    "start": "nodemon stream.js"
   },
   "author": "anshbegmirza",
   "license": "ISC",

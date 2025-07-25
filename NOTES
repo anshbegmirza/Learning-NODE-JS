@@ -1,0 +1,115 @@
+===============================================
+
+node
+(to create repel in terminal)
+
+String.
+(to view all the methods and things we can do with string)
+
+Array.
+
+===============================================
+
+\*\*To view the docs of node go to nodejs org, and move to docs section.
+
+===============================================
+
+To Read & write
+
+const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
+console.log(textIn);
+
+const textOut = `this is what we know about the avocado 🥑 ${textIn} \n Created on ${Date.now()}`;
+
+fs.writeFileSync('./txt/output.txt', textOut);
+console.log('FileWritten !');
+
+# readFileSync & writeFileSync are both synchoronous blocking piece of codes, thereby they are executed line by line
+
+It is not advisable to use these kind, instead use async functions (Non-Blocking).
+
+replace readFileSync with readFile
+and
+replace writeFileSync with writeFile
+
+===============================================
+
+fs.readFile('./txt/start.txt', 'utf-8', (err, data1) => {
+console.log(data1);
+fs.readFile(`./txt/${data1}.txt`, 'utf-8', (err, data2) => {
+console.log(data2);
+
+    fs.readFile(`./txt/append.txt`, 'utf-8', (err, data3) => {
+      console.log(data3);
+
+      fs.writeFile('./txt/final.txt', `${data2}\n${data3}`, 'utf-8', (err) => {
+        console.log('file updated successfully !, Your file has been written 😉️😉️😉️');
+
+      })
+
+    })
+
+})
+})
+
+In the above function the arrow functions of readFile and writeFile do not get their own this keyword, but they have this keyword of the parent function.
+
+This is called as Lexical this keyword.
+
+\*\*\* Where as the function defined using their own name or the function keyword have their own this keyword.
+
+=============================================== 13.
+When we send back a json format we have to specifiy the type like this:
+
+fs.readFile(`${__dirname}/dev-data/data.json`, 'utf-8', (err, data) => {
+// const productData = JSON.parse(data);
+// console.log(productData);
+console.log(JSON.parse(data));
+res.writeHead(200, { 'Content-type': 'application/json' })
+res.end(data)
+})
+
+writeHead(200, {'Content-type': 'application/json'});
+
+In res.end() // pass "string values and not objects";
+
+===============================================
+COMPLETED NODE FARM 🌽️ 🍓️
+===============================================
+
+Use slugify npm package to have pretty urls while working in node js.
+
+=============================================== 21.
+npm outdated (to see if we have any outdated packages) 😉️
+
+===============================================
+
+API = APPLICATION PROGRAMMING INTERFACE
+A piece of software that can be used by another piece of software, in order to allow applications to talk to each other.
+
+===============================================
+
+The five api methods on which we are going to work are :
+
+POST -- CREATE NEW RESOURCE
+GET -- GET DATA FROM RESOURCE
+PUT -- PUT CHANGED DETAILS (UPDATE ENTIRE RESOURCE)
+PATCH -- UPDATE EXISITING RESOURCE
+DELETE -- DELETE A RESOURCE
+
+# THESE ARE CRUD OPERATIONS (CREATE READ UPDATE & DELETE)
+
+Stateless RESTful API: All state is handled on the client. This means that each must contain all the information necessary to process a certain request. The server should not have to remember previous requests.
+
+===============================================
+
+app.use(express.json());
+
+It is kind of middle ware, it transfer our post body to correct json format.
+
+Never block the event loop.
+
+Whenever we are inside a event loop write async functions.
+
+
+===============================================

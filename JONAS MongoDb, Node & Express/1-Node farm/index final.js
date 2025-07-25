@@ -1,9 +1,12 @@
 const fs = require('fs');
-
-const http = require('http'); // networking capabilities
+const slugify = require('slugify')
+const http = require('http');
 const url = require('url');
 
-import { replaceTemplate } from './modules/replaceTemplate';
+
+
+const replaceTemplate = require('./modules/replaceTemplate')
+
 
 //////////////////////////////
 // SERVER
@@ -16,6 +19,14 @@ const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.htm
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8')
 const dataObj = JSON.parse(data); // this holds data in as js obj.
 
+const slugs = dataObj.map(el => {
+  return slugify(el.productName, { lower: true })
+})
+
+console.log(slugs);
+
+
+console.log(slugify('Fresh AVAcados', { lower: true }));
 
 
 const server = http.createServer((req, res) => {
