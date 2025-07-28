@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+}
+
+.container {
+  outline: 1px solid lime;
+  width: max-content;
+  margin: auto;
+  text-align: center;
+}
+
+.container h1 {
+  color: #33333B;
+  margin-bottom: .5rem;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.container h4 {
+  font-size: 3rem;
+  color: #E5322D;
+  font-weight: 300;
+  margin: 0 1rem;
+}
