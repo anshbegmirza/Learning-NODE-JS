@@ -113,3 +113,39 @@ Whenever we are inside a event loop write async functions.
 
 
 ===============================================
+
+58.
+
+Middleware are functions which improve or the request obj and also the response object.
+
+So we can also say that everything is middleware (even routes) in express.
+
+they do things like logging, setting up headers, parsing body, and router.
+
+Order as defined in code.
+
+
+===============================================
+
+59. Creating our own middle ware
+
+app.use()
+😉️
+
+** Order of function we execute in our code really matters alot !
+
+
+===============================================
+
+62. Mounting multiple routes.
+
+-- app.use('/api/v1/tours', tourRouter);
+const tourRouter = express.Router();
+tourRouter.route('/').get(getAllTours).post(createTour);
+
+This function named tourRouter, means mounting routes, on top of existing '/api/v1/tours' route.
+
+===============================================
+
+So far we have created the separate file for each fun
+

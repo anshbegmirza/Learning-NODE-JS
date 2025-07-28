@@ -2,9 +2,9 @@
   "name": "4-natours",
   "version": "1.0.0",
   "description": "Learning node js, express, and mongoDb.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon server.js"
   },
   "author": "anshbegmirza",
   "license": "ISC",
